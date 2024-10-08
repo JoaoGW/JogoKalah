@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Cava
+comment1.params=
+comment1.target=Cava()
+comment2.params=qnt
+comment2.target=void\ addSementes(int)
+comment3.params=
+comment3.target=void\ zerarSementes()
+comment4.params=
+comment4.target=int\ getSementes()
+numComments=5
