@@ -1,4 +1,9 @@
+package View;
+
 import java.util.ArrayList;
+
+import Model.CasaSimples;
+import Model.Silo;
 
 public class View {
     public View() {}
@@ -44,7 +49,7 @@ public class View {
                 "De qual casa você deseja capturar as sementes adversarias?\n Requisito: A quantidade de sementes na sua casa deve ser igual a 1!");
     }
 
-    public void cavaVazia(){
+    public void casaVazia(){
         System.out.println("Escolha uma casa com 1 ou mais sementes!");
     }
 
@@ -54,11 +59,11 @@ public class View {
 
     public void fazendeiroVencedor(int fazendeiro){
         if(fazendeiro == 1){
-            System.out.println("\n\nO fazendeiro 1 venceu o jogo!\n\n");
+            System.out.println("\nO fazendeiro 1 venceu o jogo!\n\n");
         }else if(fazendeiro == 2){
-            System.out.println("\n\nO fazendeiro 2 venceu o jogo!\n\n");
+            System.out.println("\nO fazendeiro 2 venceu o jogo!\n\n");
         }else{
-            System.out.println("\n\nOcorreu um empate! Ninguém venceu o jogo.\n\n");
+            System.out.println("\nOcorreu um empate! Ninguém venceu o jogo.\n\n");
         }
     }
 
@@ -73,28 +78,28 @@ public class View {
     }
 
     // Mostra visualmente qual fazendeiro ira jogar agora
-    public void vezJogador(int fazendeiro){
+    public void vezJogador(int fazendeiro, int rodada){
         if(fazendeiro == 1){
-            System.out.println("\nVez do Fazendeiro 1");
+            System.out.println("\nVez do Fazendeiro 1 - Rodada " + rodada);
         }else{
-            System.out.println("\nVez do Fazendeiro 2");
+            System.out.println("\nVez do Fazendeiro 2 - Rodada " + rodada);
         }
     }
 
     // Imprime tds as casas e silos
-    public void mostrarTabuleiro(ArrayList<CasaSimples> cavasSimples, Silo silo1, Silo silo2, int fazendeiro) {
+    public void mostrarTabuleiro(ArrayList<CasaSimples> casasSimples, Silo silo1, Silo silo2, int fazendeiro) {
         System.out.println();
         int s2 = silo2.getQntSementes();
         System.out.print("Silo 2: " + s2 + " ");
         
         for (int i = 11; i > 5; i--) {
-            int c = cavasSimples.get(i).getQntSementes();
+            int c = casasSimples.get(i).getQntSementes();
             System.out.print("Casa [" + i + "]: " + c + " || ");
         }
         System.out.println();
         System.out.print("          ");
         for (int i = 0; i < 6; i++) {
-            int c = cavasSimples.get(i).getQntSementes();
+            int c = casasSimples.get(i).getQntSementes();
             System.out.print("Casa [" + i + "]: " + c + " || ");
         }
 
